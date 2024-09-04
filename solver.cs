@@ -3,16 +3,16 @@ using Google.OrTools.LinearSolver;
 
 namespace panel_placer
 {
-    public class SolarPanelPlacement2
+    public class PanelPlacement
     {
         public static void Solution()
         {
-            // Adatok inicializálása
-            int N = 5; // Sorok maximális száma
-            int M = 5; // Oszlopok maximális száma
-            double w = 1.0; // Panel szélessége
-            double h = 1.0; // Panel magassága
-            int P = 9; // Panelek maximális száma
+            
+            int N = 5; 
+            int M = 5;
+            double w = 1.0; 
+            double h = 1.0; 
+            int P = 9;
 
             // Solver létrehozása
             Solver solver = Solver.CreateSolver("SCIP");
