@@ -14,7 +14,7 @@ namespace panel_placer
             double h = 1.0; 
             int P = 9;
 
-            // Solver létrehozása
+           
             Solver solver = Solver.CreateSolver("SCIP");
             if (solver is null)
             {
@@ -22,7 +22,7 @@ namespace panel_placer
                 return;
             }
 
-            // Döntési változók létrehozása
+            
             Variable[,] x = new Variable[N, M];
             for (int i = 0; i < N; i++)
             {
@@ -32,7 +32,7 @@ namespace panel_placer
                 }
             }
 
-            // Korlátok hozzáadása
+            
             for (int i = 0; i < N; i++)
             {
                 for (int j = 1; j < M; j++)
@@ -58,7 +58,7 @@ namespace panel_placer
                 }
             }
 
-            // Célfüggvény beállítása
+            
             Objective objective = solver.Objective();
             for (int i = 0; i < N; i++)
             {
@@ -70,10 +70,10 @@ namespace panel_placer
             }
             objective.SetMinimization();
 
-            // Megoldás kiszámítása
+            
             solver.Solve();
 
-            // Eredmények kiírása mátrix formában
+          
             Console.WriteLine("Megoldás mátrix formában:");
             for (int i = 0; i < N; i++)
             {
